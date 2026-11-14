@@ -22,9 +22,7 @@ services:
       OTEL_EXPORTER_OTLP_ENDPOINT: http://172.21.0.8:4317
     depends_on:
       postgres:
-        condition: service_healthy
       redis:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8000/health"]
       interval: 30s
